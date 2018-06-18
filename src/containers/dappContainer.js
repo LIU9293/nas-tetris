@@ -47,14 +47,14 @@ class DappContainer extends Component {
   }
 
   write = async (name, score) => {
-    const res = await write(testnet, name, score)
+    const res = await write(mainnet, name, score)
     console.log(res)
     return res;
   }
 
   getList = async () => {
     try {
-      const res = await getList(testnet)
+      const res = await getList(mainnet)
       this.setState({ dappRank: res.records })
     } catch (e) {
       this.setState({ error: e })
@@ -63,7 +63,7 @@ class DappContainer extends Component {
 
   getMine = async (address) => {
     try {
-      const res = await getMine(testnet, address)
+      const res = await getMine(mainnet, address)
       console.log(res)
     } catch (e) {
       this.setState({ error: e })
